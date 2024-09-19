@@ -5,13 +5,14 @@ from yaml.loader import SafeLoader
 
 # hashed_passwords = stauth.Hasher(['abc', 'def']).generate()
 
+# Depends on where you run the script
 with open('../config.yaml') as file:
     config = yaml.load(file, Loader=SafeLoader)
     
 # Pre-hashing all plain text passwords once
 # Hasher.hash_passwords(config['credentials'])
- 
-authenticator = stauth.Authenticate(
+
+authenticator = stauth.Authenticate( 
     config['credentials'],
     config['cookie']['name'],
     config['cookie']['key'],
@@ -19,7 +20,7 @@ authenticator = stauth.Authenticate(
     config['preauthorized']
 )
 
-name, authentication_status, username = authenticator.login(captcha=False)
+name, authentication_status, username = authenticator.login(captcha=True)
 
 # Checks if authenticated and then access to content
 if st.session_state['authentication_status']:
