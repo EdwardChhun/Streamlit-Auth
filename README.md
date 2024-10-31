@@ -9,3 +9,11 @@ Trying out Streamlit Authentication module written by Mohammad Khorasani
 
 ## Testing Google Media Pipe hand recognition model
 ![hand-detection](assets/image/hand_recognition.png)
+
+## Important info
+
+Python 3.12 above does not work with this when creating a new virtual invironment run
+
+```
+python3.12 -m venv venv
+```
